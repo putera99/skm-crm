@@ -50,7 +50,7 @@
                                 <td class="px-4 py-2 text-center border border-gray-300">
                                     <button type="submit"
                                             class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded shadow">
-                                        {{ \Cknow\Money\Money::{\App\Queries\SettingQueries::getSettingValue('currency')}($product->budget) }}
+                                        {{ \Cknow\Money\Money::{\App\Queries\SettingQueries::getSettingValue('currency')}($product->price * 1000) }} 
                                     </button>
                                 </td>
 

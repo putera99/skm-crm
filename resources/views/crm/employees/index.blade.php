@@ -48,7 +48,7 @@
                                 <td class="px-4 py-2 text-center border border-gray-300">{{ $employee->phone }}</td>
                                 <td class="px-4 py-2 text-center border border-gray-300">{{ $employee->email }}</td>
                                 <td class="px-4 py-2 text-center border border-gray-300">{{ $employee->job }}</td>
-                                <td class="px-4 py-2 text-center border border-gray-300">{{ $employee->client->full_name ?? null }}</td>
+                                <td class="px-4 py-2 text-center border border-gray-300">{{ $employee->client->full_name ?? null }}</td>    
 
                                 <td class="px-4 py-2 text-center border border-gray-300">
                                     <form method="POST" action="{{ route('employees.set.active', $employee) }}">
