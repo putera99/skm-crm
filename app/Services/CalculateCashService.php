@@ -124,9 +124,14 @@ class CalculateCashService
             $dates->put($date, 0);
         }
 
+        // $query = Task::where('created_at', '>=', $dates->keys()->first())
+        //     ->groupBy(DB::raw('DATE(created_at)'))
+        //     ->orderBy('created_at');
+
         $query = Task::where('created_at', '>=', $dates->keys()->first())
-            ->groupBy(DB::raw('DATE(created_at)'))
-            ->orderBy('created_at');
+             ->selectRaw('DATE(created_at) as date, COUNT(*) as count')
+             ->groupBy(DB::raw('DATE(created_at)'))
+             ->orderBy('date');  
 
         if ($isCompleted) {
             $query->where('completed', 1);
