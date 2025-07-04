@@ -53,6 +53,7 @@ class ProductsController extends Controller
     public function processRenderUpdateForm(Product $product): \Illuminate\View\View
     {
         // Load the product details and render the update form.
+        // dd($product);
         return view('crm.products.update')->with(['product' => $product, 'products' => ProductQueries::getAll()]);
     }
 
@@ -99,6 +100,7 @@ class ProductsController extends Controller
     public function processUpdateProduct(ProductUpdateRequest $request, Product $product): \Illuminate\Http\RedirectResponse
     {
         // Update the product.
+        // dd($request->all(), $product);
         $this->dispatchSync(new UpdateProductJob($request->validated(), $product));
 
         // Store a system log.

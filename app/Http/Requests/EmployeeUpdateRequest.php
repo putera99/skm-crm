@@ -30,7 +30,6 @@ class EmployeeUpdateRequest extends FormRequest
             'email' => 'required|email',
             'job' => 'required|string',
             'note' => 'required|string',
-            'client_id' => 'required|integer'
         ];
     }
 }

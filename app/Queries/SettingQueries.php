@@ -23,6 +23,7 @@ class SettingQueries
 
     public static function getSettingValue(string $key)
     {
-        return Setting::where('key', $key)->get()->last()->value;
+        $val = Setting::where('key', $key)->get()->last()->value;
+        return $val;
     }
 }
